@@ -88,7 +88,7 @@ public class TransferenceService {
         );
 
         //5º - Chamo meu producer para disparar o evento
-        transferenceProducer.send(transference.getId(),event);
+        transferenceProducer.send(transference.getAccountFrom(),event);
 
         //6º - Retorno meu evento salvo
         return new TransferenceResponseDTO(

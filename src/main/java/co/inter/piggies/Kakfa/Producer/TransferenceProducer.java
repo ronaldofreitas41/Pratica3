@@ -16,5 +16,5 @@ public interface TransferenceProducer {
     * A Key passada serve para direcionar eventos de mesma key para a mesma partição do Kafka
     */
     @Topic(Topics.TRANSFERENCES)
-     void send(@KafkaKey UUID transferenceID, TransferenceEvent event);
+     void send(@KafkaKey UUID accountFromId, TransferenceEvent event);
 }

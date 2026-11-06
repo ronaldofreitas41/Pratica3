@@ -46,6 +46,9 @@ public class AccountService {
                     "Conta já existente com o Id: "+body.id());
         }
 
+        Account account = new Account(body.id(), body.initialBalance());
+        accountRepository.save(account);
+
         return new AccountResponseDTO(body.id(),body.initialBalance());
 
     }

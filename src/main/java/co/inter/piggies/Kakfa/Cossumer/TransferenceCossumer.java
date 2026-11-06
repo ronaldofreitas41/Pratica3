@@ -7,6 +7,6 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 @KafkaListener
 public class TransferenceCossumer {
 
-    @Topic(Topics.TRANSFERENCES)
+    //@Topic(Topics.TRANSFERENCES)
 
 }

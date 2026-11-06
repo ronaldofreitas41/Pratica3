@@ -4,10 +4,7 @@ import co.inter.piggies.domain.transference.TransferenceRequestDTO;
 import co.inter.piggies.domain.transference.TransferenceResponseDTO;
 import co.inter.piggies.service.TransferenceService;
 import io.micronaut.http.HttpResponse;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.PathVariable;
-import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.*;
 import jakarta.inject.Inject;
 
 import java.util.List;
@@ -49,7 +46,7 @@ public class TransferencesController {
     */
 
     @Post
-    public HttpResponse <TransferenceResponseDTO> createTransference(TransferenceRequestDTO body){
+    public HttpResponse <TransferenceResponseDTO> createTransference(@Body TransferenceRequestDTO body){
         return HttpResponse.ok(transferenceService.createTransference(body));
     }
 }
