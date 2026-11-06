@@ -9,7 +9,7 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import java.util.UUID;
 
 @KafkaClient
-public interface TransferencesProducer {
+public interface TransferenceProducer {
 
     /*
     * Por meio do tópico TRANSFERENCES eu envio meus eventos de transferencia

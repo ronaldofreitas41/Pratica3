@@ -5,7 +5,7 @@ import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 
 @KafkaListener
-public class TransferencesCossumer {
+public class TransferenceCossumer {
 
     @Topic(Topics.TRANSFERENCES)
 

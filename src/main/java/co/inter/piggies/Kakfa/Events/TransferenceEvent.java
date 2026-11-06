@@ -7,6 +7,7 @@ import java.util.UUID;
 
 @Serdeable
 public record TransferenceEvent(
+    UUID id,
     UUID from,
     UUID to,
     BigDecimal ammount,

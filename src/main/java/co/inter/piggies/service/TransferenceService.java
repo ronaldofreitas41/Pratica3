@@ -1,6 +1,7 @@
 package co.inter.piggies.service;
 
 import co.inter.piggies.Kakfa.Events.TransferenceEvent;
+import co.inter.piggies.Kakfa.Producer.TransferenceProducer;
 import co.inter.piggies.Repository.TransferenceRepository;
 import co.inter.piggies.domain.transference.Transference;
 import co.inter.piggies.domain.transference.TransferenceRequestDTO;
@@ -20,6 +21,9 @@ public class TransferenceService {
 
     @Inject
     TransferenceRepository transferenceRepository;
+
+    @Inject
+    TransferenceProducer transferenceProducer;
 
     public TransferenceResponseDTO getTransferenceByID(UUID id) {
 
@@ -75,12 +79,20 @@ public class TransferenceService {
         transferenceRepository.save(transference);
 
         //4º - Crio meu evento
-        TransferenceEvent event =
+        TransferenceEvent event = new TransferenceEvent(
+                transference.getId(),
+                transference.getAccountFrom(),
+                transference.getAccountTo(),
+                transference.getAmmount(),
+                transference.getStatus()
+        );
 
         //5º - Chamo meu producer para disparar o evento
+        transferenceProducer.send(transference.getId(),event);
 
         //6º - Retorno meu evento salvo
-        return new TransferenceResponseDTO(transference.getId(),
+        return new TransferenceResponseDTO(
+                transference.getId(),
                 transference.getAccountFrom(),
                 transference.getAccountTo(),
                 transference.getAmmount(),
