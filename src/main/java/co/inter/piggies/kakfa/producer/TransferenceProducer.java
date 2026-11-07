@@ -1,7 +1,7 @@
-package co.inter.piggies.Kakfa.Producer;
+package co.inter.piggies.kakfa.producer;
 
-import co.inter.piggies.Kakfa.Events.TransferenceEvent;
-import co.inter.piggies.Kakfa.Topics;
+import co.inter.piggies.kakfa.events.TransferenceEvent;
+import co.inter.piggies.kakfa.Topics;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.Topic;

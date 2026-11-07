@@ -13,7 +13,7 @@ import java.util.UUID;
 @Controller("/api/transference")
 public class TransferencesController {
 
-    @Inject
+
     private final TransferenceService transferenceService;
 
     public TransferencesController(TransferenceService transferenceService) {

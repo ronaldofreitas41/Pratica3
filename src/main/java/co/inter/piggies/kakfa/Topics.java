@@ -1,6 +1,5 @@
-package co.inter.piggies.Kakfa;
+package co.inter.piggies.kakfa;
 
-import io.micronaut.configuration.kafka.annotation.Topic;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

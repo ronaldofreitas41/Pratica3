@@ -1,8 +1,8 @@
 package co.inter.piggies.service;
 
-import co.inter.piggies.Kakfa.Events.TransferenceEvent;
-import co.inter.piggies.Kakfa.Producer.TransferenceProducer;
-import co.inter.piggies.Repository.TransferenceRepository;
+import co.inter.piggies.kakfa.events.TransferenceEvent;
+import co.inter.piggies.kakfa.producer.TransferenceProducer;
+import co.inter.piggies.repository.TransferenceRepository;
 import co.inter.piggies.domain.transference.Transference;
 import co.inter.piggies.domain.transference.TransferenceRequestDTO;
 import co.inter.piggies.domain.transference.TransferenceResponseDTO;

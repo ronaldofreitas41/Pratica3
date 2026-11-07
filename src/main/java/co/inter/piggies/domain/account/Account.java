@@ -19,7 +19,11 @@ public class Account {
 
     @Id
     private UUID accountid;
+
     @Column(precision = 20, scale = 2)
     private BigDecimal initialBalance;
+
+    @Column(precision = 20, scale = 2)
+    private BigDecimal balance;
 
 }

@@ -1,6 +1,7 @@
 package co.inter.piggies.controller;
 
 
+import co.inter.piggies.domain.account.AccountCreateDTO;
 import co.inter.piggies.domain.account.AccountRequestDTO;
 import co.inter.piggies.domain.account.AccountResponseDTO;
 import co.inter.piggies.service.AccountService;
@@ -30,8 +31,13 @@ public class AccountController {
     }
 
     @Post
-    public HttpResponse<AccountResponseDTO> createAccount(@Body AccountRequestDTO body){
+    public HttpResponse<AccountResponseDTO> createAccount(@Body AccountCreateDTO body){
         return HttpResponse.created(accountService.CreateAccount(body));
+    }
+
+    @Put("/{id}")
+    public HttpResponse<AccountResponseDTO> updateAccount(@PathVariable UUID id, @Body AccountRequestDTO body){
+        return HttpResponse.created(accountService.updateAccount(id, body));
     }
 
 }

@@ -1,4 +1,4 @@
-package co.inter.piggies.Kakfa.Events;
+package co.inter.piggies.kakfa.events;
 
 import io.micronaut.serde.annotation.Serdeable;
 

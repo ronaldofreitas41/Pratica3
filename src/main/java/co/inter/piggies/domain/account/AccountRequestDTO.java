@@ -8,5 +8,6 @@ import java.util.UUID;
 @Serdeable
 public record AccountRequestDTO(
         UUID id,
-        BigDecimal initialBalance
+        BigDecimal initialBalance,
+        BigDecimal balance
 ) {}
